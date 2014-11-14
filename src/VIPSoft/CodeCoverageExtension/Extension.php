@@ -135,7 +135,14 @@ class Extension implements ExtensionInterface
                                            prototype('array')->
                                                children()->
                                                    scalarNode('prefix')->defaultValue('')->end()->
-                                                   scalarNode('suffix')->defaultValue('.php')->end()->
+                                                   arrayNode('suffix')->
+                                                       defaultValue(array('.php'))->
+                                                       beforeNormalization()->
+                                                           ifString()->
+                                                           then(function($v) { return array($v); })->
+                                                       end()->
+                                                       prototype('scalar')->end()->
+                                                   end()->
                                                end()->
                                            end()->
                                         end()->
@@ -152,7 +159,14 @@ class Extension implements ExtensionInterface
                                            prototype('array')->
                                                children()->
                                                    scalarNode('prefix')->defaultValue('')->end()->
-                                                   scalarNode('suffix')->defaultValue('.php')->end()->
+                                                   arrayNode('suffix')->
+                                                       defaultValue(array('.php'))->
+                                                       beforeNormalization()->
+                                                           ifString()->
+                                                           then(function($v) { return array($v); })->
+                                                       end()->
+                                                       prototype('scalar')->end()->
+                                                   end()->
                                                end()->
                                            end()->
                                         end()->
@@ -174,7 +188,14 @@ class Extension implements ExtensionInterface
                                            prototype('array')->
                                                children()->
                                                    scalarNode('prefix')->defaultValue('')->end()->
-                                                   scalarNode('suffix')->defaultValue('.php')->end()->
+                                                   arrayNode('suffix')->
+                                                       defaultValue(array('.php'))->
+                                                       beforeNormalization()->
+                                                           ifString()->
+                                                           then(function($v) { return array($v); })->
+                                                       end()->
+                                                       prototype('scalar')->end()->
+                                                   end()->
                                                end()->
                                            end()->
                                         end()->
@@ -191,7 +212,14 @@ class Extension implements ExtensionInterface
                                            prototype('array')->
                                                children()->
                                                    scalarNode('prefix')->defaultValue('')->end()->
-                                                   scalarNode('suffix')->defaultValue('.php')->end()->
+                                                   arrayNode('suffix')->
+                                                       defaultValue(array('.php'))->
+                                                       beforeNormalization()->
+                                                           ifString()->
+                                                           then(function($v) { return array($v); })->
+                                                       end()->
+                                                       prototype('scalar')->end()->
+                                                   end()->
                                                end()->
                                            end()->
                                         end()->
